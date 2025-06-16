@@ -15,7 +15,7 @@ export default function Home() {
 {/*Left Section: Text and social icons*/}
 <div className='md:w-1/2 space-y-6'>
 <h1 className='text-4xl text-blue-900 font-bold'>
-Hi, I'm Fred
+Hi, I am Fred
 </h1>
 <p className='text-lg'>I am a Frontend Developer, Content Writer and Reddit Reviewer. I am passionate
   about technology and am always looking for new ways to improve my skills and knowledge. My focus
@@ -36,7 +36,7 @@ Hi, I'm Fred
 {/*Right Section: Profile Image with Animated Border*/}
 <div className='relative mt-10 md:mt-0 md:w-1/2 flex justify-center'>
 <div className='relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500'>
-  <Image src="/fred2.jpg" alt="Fred's Profile"/>
+  <Image src="/fred2.jpg" width={400} height={300} className='rounded-lg shadow-lg w-72 object-cover' alt="Fred's Profile"/>
 
 {/*Animated border*/}
 <div className='absolute inset-0 rounded-full border-4 border-dotted border-blue-400 animated-spin-slow'>

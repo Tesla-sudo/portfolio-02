@@ -57,7 +57,7 @@ setSending(false);
 
 <div>
     <h2 className='text-2xl font-bold mb-6 text-blue-800'>
-Let's work together
+Let us work together
     </h2>
     <form  onSubmit={handleSubmit} className='space-y-4'>
         <input name='name' type="text" placeholder='Name'  onChange={handleChange} value={formData.name} required className='w-full p-3 border rounded text-black'/>
