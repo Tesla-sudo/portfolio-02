@@ -1,7 +1,7 @@
 'use client';
 import { FaReddit, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import Image from "next/image";
-import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -36,7 +36,8 @@ Hi, I'm Fred
 {/*Right Section: Profile Image with Animated Border*/}
 <div className='relative mt-10 md:mt-0 md:w-1/2 flex justify-center'>
 <div className='relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500'>
-<img src="/fred2.jpg" alt="Fred's Profile"/>
+  <Image src="/fred2.jpg" alt="Fred's Profile"/>
+
 {/*Animated border*/}
 <div className='absolute inset-0 rounded-full border-4 border-dotted border-blue-400 animated-spin-slow'>
 

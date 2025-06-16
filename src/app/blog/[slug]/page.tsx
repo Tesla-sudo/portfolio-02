@@ -1,5 +1,5 @@
-import { div } from 'framer-motion/client';
-import { use } from 'react';
+
+
 
 const blogPosts: Record<string, 
 { title: string; content:
@@ -19,10 +19,13 @@ const blogPosts: Record<string,
         content: 'Spending time reviwing posts and threads on Reddit has become one of the most unexpectedly insightful parts of my learning routine. At first, I just browsed casually - reading through questions, opinions and rants on subreddits related to tech, writing and design. But the more I paid attention, the more I started to notice patterns. I began seeing where people consistently got stuck, what concepts they misunderstood and which explations actually helped them. Reddit became this unfiltered mirror of real struggles, raw thoughts, and community-level feedback that is hard to find in polished tutorials or official documentation. It is not just about helping others solve problems. Reading through these discussions gives me clearer sense of what is worth learning deeper, how to communicate better and how to spot gaps in my own understanding. Sometimes, the best way to learn is not from the top rated answer - but from the confusion in the comments. That is where the real questions are. That is where clarity is needed. Reviewing Reddit is not just informative - it is a chance to connect with real people, real problems and real growth.'
     }
 };
+type PageProps = {
+    params: {
+        slug:string;
+    };
+};
 
-export default function BlogPost({ params }: { params:
-    { slug: string }
-}) {
+export default function BlogPost({ params }: PageProps) {
     const post = blogPosts[params.slug];
     if (!post) return <div className='p-6 text-red-500'>
 Post not found,

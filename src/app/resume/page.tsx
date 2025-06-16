@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { div, main } from "framer-motion/client";
+
 import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
  
 export default function ResumePage(){

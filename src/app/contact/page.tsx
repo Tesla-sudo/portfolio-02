@@ -1,10 +1,10 @@
 'use client';
-import { useEffect, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+
 import React from 'react';
-import { useRef } from 'react';
+
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
-import { error } from 'console';
+
 import  { supabase }  from '@/lib/supabaseClient';
 
 export default function ContactPage(){
@@ -17,7 +17,7 @@ export default function ContactPage(){
         service:'',
         message:'',
     });
-    const [status, setStatus] = useState('');
+    
     const [sending, setSending] = useState(false);
     const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const {name, value} = e.target;
@@ -28,10 +28,10 @@ export default function ContactPage(){
     const handleSubmit = async (e:React.FormEvent) => {
         e.preventDefault();
         setSending(true);
-        setStatus('');
+        
 
         try {
-            const { data, error } = await supabase.from('users-table').insert([
+            const { error } = await supabase.from('users-table').insert([
                 { name: formData.name, email: formData.email, phone: formData.phone, sevice: formData.service, message: formData.message }
             ]);
             if (error){
