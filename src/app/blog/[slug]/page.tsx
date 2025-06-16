@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+
 
 
 
@@ -21,24 +21,13 @@ const blogPosts: Record<string,
     }
 };
 interface PageProps{
-    params: {
-        slug: string;
-    };
+    params: Promise<{ slug: string }>
 }
-export async function generateMetadata({
-    params,
-}: {
-    params: { slug: string };
-}): Promise<Metadata> {
-    return{
-        title: `Blog: ${params.slug}`,
 
-};
-};
 
-export default function BlogPost({ params }: PageProps ) {
-    const { slug } = params;
-    const post = blogPosts[params.slug];
+export default async function BlogPost({ params }: PageProps ) {
+    
+    const post = blogPosts[(await params).slug];
     if (!post) return <div className='p-6 text-red-500'>
 Post not found,
     </div>;
