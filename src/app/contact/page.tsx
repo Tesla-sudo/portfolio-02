@@ -32,7 +32,7 @@ export default function ContactPage(){
 
         try {
             const { data, error } = await supabase.from('users-table').insert([
-                { name:'', email:'', phone:"", sevice:'', message:'' }
+                { name: formData.name, email: formData.email, phone: formData.phone, sevice: formData.service, message: formData.message }
             ]);
             if (error){
                 console.error('insert error:', error);
@@ -44,7 +44,7 @@ export default function ContactPage(){
             console.error('Unexpected error:', err);
             alert('Something went wrong, sent me message via LinkedIn or email');
         }
-
+setSending(false);
         
     };
     
