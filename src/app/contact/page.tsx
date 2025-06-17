@@ -2,10 +2,10 @@
 import { useState } from 'react';
 
 import React from 'react';
-
+import { supabase } from '@/lib/supabaseClient';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
-import  { supabase }  from '@/lib/supabaseClient';
+
 
 export default function ContactPage(){
 
@@ -35,10 +35,17 @@ export default function ContactPage(){
                 { name: formData.name, email: formData.email, phone: formData.phone, sevice: formData.service, message: formData.message }
             ]);
             if (error){
-                console.error('insert error:', error);
+                console.error('Insert error:', error);
                 alert("Something went wrong, sent me message via LinkedIn or email")
             } else {
-                alert("Message sent successfully")
+                alert("Message sent successfully");
+setFormData({
+    name: '',
+    email: '',
+    phone:'',
+    service:'',
+    message:'',
+});
             }
         } catch(err){
             console.error('Unexpected error:', err);
